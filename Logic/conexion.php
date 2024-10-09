@@ -6,7 +6,7 @@ $pass = "";
 $db = "bd_ventas";
 //Creamos la conexion
 try {
-    //code...
+    $conexion = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $pass);
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
