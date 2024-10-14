@@ -7,6 +7,8 @@ $db = "bd_ventas";
 //Creamos la conexion
 try {
     $conexion = new PDO("mysql:host=$server;dbname=$db;charset=utf8", $user, $pass);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conectado";
 } catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    echo "Error en la conexion con PDO : " . $e->getMessage();
 }
