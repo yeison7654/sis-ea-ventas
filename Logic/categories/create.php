@@ -1,8 +1,9 @@
 <?php
+require_once "../mysql.php";
 require_once "../conexion.php";
 //Variables de la categoria
-$name = "sdadas";
-$description = "asds";
+$name = "Gaseosas";
+$description = "Relacionados a las gaseosas";
 //validar que los campos no esten vacios
 if ($name == "" || $description == "") {
     echo "Error, campos vacios";
@@ -15,11 +16,4 @@ $arrData = array(
 );
 //preparamos la consulta
 $sql = "INSERT INTO categories (c_name,c_description) VALUES(?,?);";
-try {
-    //preparamos la consulta con la conexion
-    $prepared = $conexion->prepare($sql);
-    $prepared->execute($arrData);
-    echo "Datos guardados";
-} catch (PDOException $e) {
-    echo "Erro: " . $e->getMessage();
-}
+$request = register($conexion, $arrData, $sql);
