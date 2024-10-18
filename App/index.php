@@ -1,4 +1,5 @@
 <?php
+require_once "../config/config.php";
 if (!isset($_GET["v"])) {
     $_GET["v"] = "login";
 }

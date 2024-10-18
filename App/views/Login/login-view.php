@@ -22,7 +22,7 @@
             <div style="margin-bottom: 1rem;"><button type="submit">Inicio de Sesion</button></div>
         </form>
     </div>
-
+    <script src="<?= BASE_URL ?>App/assets/js/Login/functions_login.js"></script>
 </body>
 
 </html>
