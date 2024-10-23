@@ -12,18 +12,18 @@
         <h1>Inicio de Sesion</h1>
         <form id="form_login">
             <div style="margin-bottom: 1rem;">
-                <label for="">Usuario</label>
-                <input type="text">
+                <label for="txtUser">Usuario</label>
+                <input type="text" name="txtUser" id="txtUser">
             </div>
             <div style="margin-bottom: 1rem;">
-                <label for="">Contraseña</label>
-                <input type="password">
+                <label for="txtPassword">Contraseña</label>
+                <input type="password" name="txtPassword" id="txtPassword">
             </div>
             <div style="margin-bottom: 1rem;"><button type="submit">Inicio de Sesion</button></div>
         </form>
     </div>
     <script>
-        let base_url="<?= BASE_URL ?>";
+        let base_url = "<?= BASE_URL ?>";
     </script>
     <script src="<?= BASE_URL ?>App/assets/js/Login/functions_login.js"></script>
 </body>
