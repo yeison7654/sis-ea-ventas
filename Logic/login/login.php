@@ -1,5 +1,6 @@
 <?php
 if ($_POST) {
+    session_start(["name" => "SistemaVentas"]);
     //requerimos los archivos
     require_once "../conexion.php";
     require_once "../mysql.php";
@@ -22,5 +23,19 @@ if ($_POST) {
     WHERE u.u_user=? AND u.u_password=?;";
     $arrData = array($user, $password);
     $request = select($conexion, $arrData, $sql);
-    echo json_encode($request);
+    if (!$request) {
+        $data = array(
+            "title" => "Ocurrio un error inesperado",
+            "content" => "El usuario o la contraseña no existen",
+            "status" => false
+        );
+        echo json_encode($data);
+        die();
+    }
+    $_SESSION["sesion_login"]["info"] = $request;
+    $data = array(
+        "url" => "/views/home/home.php",
+        "status" => true,
+    );
+    echo json_encode($data);
 }
