@@ -34,7 +34,7 @@ if ($_POST) {
     }
     $_SESSION["sesion_login"]["info"] = $request;
     $data = array(
-        "url" => "/views/home/home.php",
+        "url" => "?v=home",
         "status" => true,
     );
     echo json_encode($data);

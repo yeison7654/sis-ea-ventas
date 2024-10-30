@@ -26,7 +26,10 @@ function login() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        if (data.status) {
+          window.location.href = base_url + "App/" + data.url;
+        } else {
+        }
       })
       .catch((error) => {
         console.log(error);
