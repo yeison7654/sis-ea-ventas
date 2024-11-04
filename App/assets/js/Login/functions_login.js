@@ -29,6 +29,7 @@ function login() {
         if (data.status) {
           window.location.href = base_url + "App/" + data.url;
         } else {
+          alert(data.content);
         }
       })
       .catch((error) => {
