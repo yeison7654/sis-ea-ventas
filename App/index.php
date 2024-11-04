@@ -10,8 +10,14 @@ switch ($view) {
         require_once "./views/Login/" . $view;
         break;
     case "home":
+        session_start(["name" => "SistemaVentas"]);
         $view = $view . "-view.php";
         require_once "./views/Home/" . $view;
+        break;
+    case "categories":
+        session_start(["name" => "SistemaVentas"]);
+        $view = $view . "-view.php";
+        require_once "./views/Categories/" . $view;
         break;
     default:
         break;
