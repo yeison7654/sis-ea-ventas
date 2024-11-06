@@ -31,9 +31,19 @@
 
         <!-- Área de contenido -->
         <section class="content">
-            <h2>Bienvenido al Dashboard</h2>
-            <p>Bienvenido al sistema usuario <?= $_SESSION["sesion_login"]["info"]["u_name"] ?> </p>
+            <h2>Gestion de Categorias</h2>
+            <p>Gestion y administracion de categorias </p>
         </section>
+        <section class="content-body" >
+            <div>
+                <form action="">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="txtNombre" >
+                    </div>
+                </form>
+            </div>
+        </section>        
     </div>
     <script>
         let base_url = "<?= BASE_URL ?>";

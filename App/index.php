@@ -20,5 +20,6 @@ switch ($view) {
         require_once "./views/Categories/" . $view;
         break;
     default:
+        echo "Pagina no encontrada 404";
         break;
 }
