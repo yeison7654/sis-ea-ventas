@@ -189,3 +189,131 @@
   color: #888;
   font-size: 12px;
 }
+
+/* Estilos de botones */
+.form-actions .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  color: white;
+}
+
+/* Botón primario */
+.form-actions .btn-primary {
+  background-color: #4caf50;
+}
+.form-actions .btn-primary:hover {
+  background-color: #45a049;
+}
+
+/* Botón secundario */
+.form-actions .btn-secondary {
+  background-color: #008cba;
+}
+.form-actions .btn-secondary:hover {
+  background-color: #007bb5;
+}
+
+/* Botón de advertencia */
+.form-actions .btn-warning {
+  background-color: #f0ad4e;
+}
+.form-actions .btn-warning:hover {
+  background-color: #ec971f;
+}
+
+/* Botón de peligro */
+.form-actions .btn-danger {
+  background-color: #d9534f;
+}
+.form-actions .btn-danger:hover {
+  background-color: #c9302c;
+}
+
+/* Botón de éxito */
+.form-actions .btn-success {
+  background-color: #5cb85c;
+}
+.form-actions .btn-success:hover {
+  background-color: #4cae4c;
+}
+
+/* Botón de restablecimiento */
+.form-actions .btn-reset {
+  background-color: #6c757d;
+  color: white;
+}
+.form-actions .btn-reset:hover {
+  background-color: #5a6268;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Encabezados de tabla */
+thead th {
+  background-color: #007bff;
+  color: #fff;
+  text-align: left;
+  padding: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Estilos para las filas */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+  color: #333;
+}
+
+/* Estilo de la última fila (opcional, útil para totales) */
+tbody tr:last-child td {
+  font-weight: bold;
+  color: #007bff;
+  background-color: #e9f3ff;
+}
+
+/* Efecto al pasar el cursor sobre las filas */
+tbody tr:hover {
+  background-color: #e1e9f1;
+}
+
+/* Alineación de texto */
+th,
+td {
+  text-align: left;
+}
+
+.content-body {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

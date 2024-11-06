@@ -34,16 +34,44 @@
             <h2>Gestion de Categorias</h2>
             <p>Gestion y administracion de categorias </p>
         </section>
-        <section class="content-body" >
-            <div>
+        <section class="content-body">
+            <div class="form-container">
                 <form action="">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="txtNombre" >
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese el nombre de la categoria" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDescripcion">Descripcion</label>
+                        <textarea name="txtDescripcion" id="txtDescripcion"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
                     </div>
                 </form>
             </div>
-        </section>        
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Categoria 1</td>
+                            <td>Descripcion de la categoria 1</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
     <script>
         let base_url = "<?= BASE_URL ?>";
