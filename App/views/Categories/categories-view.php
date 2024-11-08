@@ -61,13 +61,8 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>Categoria 1</td>
-                            <td>Descripcion de la categoria 1</td>
-                            <td></td>
-                        </tr>
+                    <tbody id="table-body">
+                        
                     </tbody>
                 </table>
             </div>
@@ -76,7 +71,7 @@
     <script>
         let base_url = "<?= BASE_URL ?>";
     </script>
-    <script src="<?= BASE_URL ?>App/assets/js/main.js"></script>
+    <script src="<?= BASE_URL ?>App/assets/js/Categories/functions_categories.js"></script>
 </body>
 
 </html>

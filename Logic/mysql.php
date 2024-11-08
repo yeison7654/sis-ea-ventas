@@ -24,3 +24,16 @@ function select($conexion, array $arrData = array(), string $sql)
         echo "Error: " . $e->getMessage();
     }
 }
+//funcion que permite obtenes la informacion de las tablas
+function select_all($conexion, array $arrData = array(), string $sql)
+{
+    try {
+        //preparramos la consulta con la conexion
+        $prepared = $conexion->prepare($sql);
+        $prepared->execute($arrData);
+        $request = $prepared->fetchAll(PDO::FETCH_ASSOC);
+        return $request;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
