@@ -36,7 +36,7 @@
         </section>
         <section class="content-body">
             <div class="form-container">
-                <form action="">
+                <form id="formSend">
                     <div class="form-group">
                         <label for="txtNombre">Nombre</label>
                         <input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese el nombre de la categoria" required>
