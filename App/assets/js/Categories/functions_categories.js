@@ -67,6 +67,9 @@ function sendData() {
           loadTable();
           dataFormSend.reset();
           alert(resData.msg);
+          setTimeout(() => {
+            deleteData();
+          }, 1000);
         } else {
           alert(resData.msg);
         }
@@ -83,7 +86,7 @@ function deleteData() {
   let dataBtnDelete = document.querySelectorAll(".btn-delete");
   dataBtnDelete.forEach((itemButton) => {
     itemButton.addEventListener("click", () => {
-      let id = itemButton.getAttribute("data-id");
+      const id = itemButton.getAttribute("data-id");
       const data = new FormData();
       //agregando el id
       data.append("txtId", id);
@@ -96,17 +99,30 @@ function deleteData() {
         body: data,
       };
       const url = base_url + "Logic/categories/delete.php";
-      fetch(url, config)
-        .then((result) => {
-          if (!result.ok) {
-            throw new Error("Ocurrio un error inesperado: " + result.status);
-          }
-          return result.json();
-        })
-        .then((resData) => {})
-        .catch((error) => {
-          console.log(error);
-        });
+      //Alerta que pregunta si desea eliminar el registro
+      if (confirm("Desea eliminar este registro?")) {
+        fetch(url, config)
+          .then((result) => {
+            if (!result.ok) {
+              throw new Error("Ocurrio un error inesperado: " + result.status);
+            }
+            return result.json();
+          })
+          .then((resData) => {
+            if (resData.status) {
+              loadTable();
+              alert(resData.msg);
+              setTimeout(() => {
+                deleteData();
+              }, 1000);
+            } else {
+              alert(resData.msg);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     });
   });
 }
