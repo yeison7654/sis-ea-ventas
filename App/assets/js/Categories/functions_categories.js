@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     sendData();
     deleteData();
+    loadUpdate();
   }, 1000);
 });
 function loadTable() {
@@ -25,7 +26,9 @@ function loadTable() {
                     <td>${element.c_name}</td>
                     <td>${element.c_description}</td>
                     <td class="form-actions">
-                      <button class="btn-info">Actualizar</button> 
+                      <button class="btn-info btn-update" data-id="${element.idCategories}" 
+                                               data-name="${element.c_name}" 
+                                               data-description="${element.c_description}" >Actualizar</button> 
                       <button class="btn-danger btn-delete" data-id="${element.idCategories}" >Eliminar</button>
                     </td>
                   </tr>`;
@@ -69,6 +72,12 @@ function sendData() {
           alert(resData.msg);
           setTimeout(() => {
             deleteData();
+            loadUpdate();  
+            let formSend=document.getElementById("formSend");  
+            let inputHidden=formSend.querySelector('input[name="txtIdUpdate"]')
+            if(inputHidden){
+              inputHidden.remove();
+            }
           }, 1000);
         } else {
           alert(resData.msg);
@@ -114,6 +123,7 @@ function deleteData() {
               alert(resData.msg);
               setTimeout(() => {
                 deleteData();
+                loadUpdate();
               }, 1000);
             } else {
               alert(resData.msg);
@@ -123,6 +133,29 @@ function deleteData() {
             console.log(error);
           });
       }
+    });
+  });
+}
+
+function loadUpdate() {
+  const btnUpdate = document.querySelectorAll(".btn-update");
+  btnUpdate.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const id = element.getAttribute("data-id");
+      const name = element.getAttribute("data-name");
+      const description = element.getAttribute("data-description");
+      //carga en los campos del formulario
+      document.getElementById("txtNombre").value = name;
+      document.getElementById("txtDescripcion").value = description;
+      document.getElementById("btnSendData").innerHTML = "Actualizar";
+      //creamos el elemento input de tipo hidden que va a contener el id
+      const inputHidden = document.createElement("input");
+      inputHidden.setAttribute("type", "hidden");
+      inputHidden.setAttribute("name", "txtIdUpdate");
+      inputHidden.setAttribute("value", id);
+      //agregamos el input al formulario
+      document.getElementById("formSend").appendChild(inputHidden);
+      alert("Campos cargados");
     });
   });
 }

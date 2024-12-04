@@ -12,6 +12,11 @@ if ($name == "" || $description == "") {
     ]);
     die();
 }
+if(isset($_POST["txtIdUpdate"])){
+    $id=$_POST["txtIdUpdate"];
+    require_once "./update.php";
+    die();
+}
 //preparamos el array con los datos
 $arrData = array(
     $name,

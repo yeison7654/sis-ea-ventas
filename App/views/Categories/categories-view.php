@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="reset" class="btn btn-secondary">Limpiar</button>
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="submit" class="btn btn-primary" id="btnSendData">Registrar</button>
                     </div>
                 </form>
             </div>
@@ -62,7 +62,7 @@
                         </tr>
                     </thead>
                     <tbody id="table-body">
-                        
+
                     </tbody>
                 </table>
             </div>
